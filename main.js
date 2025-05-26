@@ -16,7 +16,7 @@ const items = [
 var currentItem;
 
 var userGuessInputField = document.getElementById("userGuess");
-userGuessInputField.addEventListener("keydown", function(e) {
+userGuessInputField.addEventListener("keydown", function (e) {
 	if (e.code === "Enter") {
 		checkAnswer();
 	}
@@ -53,4 +53,38 @@ function randomItem() {
 
 	console.log(items[currentItem].acceptedAnswers);
 }
+
+
+
+!function () {
+	function detectDevTool(allow) {
+		if (isNaN(+allow)) allow = 100;
+		var start = +new Date(); // Validation of built-in Object tamper prevention.
+		debugger;
+		var end = +new Date(); // Validates too.
+		if (isNaN(start) || isNaN(end) || end - start > allow) {
+			document.getElementById("itemPicture").src = "./images/avon.gif";
+		}
+	}
+	if (window.attachEvent) {
+		if (document.readyState === "complete" || document.readyState === "interactive") {
+			detectDevTool();
+			window.attachEvent('onresize', detectDevTool);
+			window.attachEvent('onmousemove', detectDevTool);
+			window.attachEvent('onfocus', detectDevTool);
+			window.attachEvent('onblur', detectDevTool);
+		} else {
+			setTimeout(argument.callee, 0);
+		}
+	} else {
+		window.addEventListener('load', detectDevTool);
+		window.addEventListener('resize', detectDevTool);
+		window.addEventListener('mousemove', detectDevTool);
+		window.addEventListener('focus', detectDevTool);
+		window.addEventListener('blur', detectDevTool);
+	}
+}();
+
+
+
 
