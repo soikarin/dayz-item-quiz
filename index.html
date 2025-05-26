@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="dark" />
+	<title>DayZ Item Quiz</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<h1>Guess the item</h1>
+	<div id="imageDiv" hidden>
+		<figure>
+			<img id="itemPicture" src="./images/weapons/AK74.webp" />
+		</figure>
+	</div>
+	<div style="padding:10px;" id="playButtonDiv">
+		<button id="playButton" onClick="randomItem()">Play</button>
+	</div>
+	<div style="padding:10px;" id="guessInputDiv" hidden>
+		<form id="guessForm" name="guessForm" onkeydown="return event.key != 'Enter';">
+			<input autocomplete="off" style="padding:10px;" id="userGuess" name="userGuess" type="text"
+				placeholder="Leave empty to SKIP" />
+			<button id="submitButton" type="button" onClick="checkAnswer()">Guess</button>
+		</form>
+	</div>
+	<script src="main.js"></script>
+</body>
+
+</html>
