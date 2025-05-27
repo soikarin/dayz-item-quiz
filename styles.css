@@ -1,5 +1,5 @@
 @font-face {
-	font-family: '28days' ;
+	font-family: '28days';
 	src: url(./28DaysLater.ttf);
 }
 
@@ -47,7 +47,7 @@ h1 {
 	flex-flow: column;
 	margin: auto;
 	width: 200px;
-	
+
 }
 
 #submitButton {
@@ -58,3 +58,13 @@ h1 {
 	margin-top: 5px;
 }
 
+#newGameButton {
+	display: flex;
+	flex-flow: column;
+	font-family: '28days';
+	font-size: xx-large;
+	width: 70%;
+	margin: auto;
+	padding: 3px;
+	width: 200px;
+}

@@ -80,22 +80,7 @@ function randomItem() {
 
 }
 
-function play() {
-	//empties the input field
-	document.getElementById("userGuess").value = '';
-	randomItem();
-
-	if (askedItems.includes(items[currentItem].itemName) == false) {
-		document.getElementById("itemPicture").src = items[currentItem].image;
-	} else if (askedItems.length == items.length) {
-		console.log("askedItems.length == items.length" + askedItems.length == items.length)
-		document.getElementById("itemPicture").hidden = true;
-		document.getElementById("gamePassed").hidden = false;
-		document.getElementById("gamePassed").autoplay = true;
-	} else {
-		play();
-	}
-
+function showGameElements() {
 	if (document.getElementById("imageDiv").hidden = true) {
 		document.getElementById("imageDiv").hidden = false;
 	}
@@ -103,10 +88,32 @@ function play() {
 	if (document.getElementById("guessInputDiv").hidden = true) {
 		document.getElementById("guessInputDiv").hidden = false;
 	}
+}
 
+function play() {
 	document.getElementById("playButtonDiv").hidden = true;
+	showGameElements();
+	//empties the input field
+	document.getElementById("userGuess").value = '';
+	randomItem();
+
+	if (askedItems.includes(items[currentItem].itemName) == false) {
+		document.getElementById("itemPicture").src = items[currentItem].image;
+	} else if (askedItems.length == items.length) {
+		document.getElementById("guessInputDiv").hidden = true;
+		document.getElementById("itemPicture").hidden = true;
+		document.getElementById("gamePassed").hidden = false;
+		document.getElementById("gamePassed").autoplay = true;
+		document.getElementById("newGameDiv").hidden = false;
+	} else {
+		play();
+	}
 
 	console.log(items[currentItem].acceptedAnswers);
+}
+
+function newGame() {
+	location.reload();
 }
 
 
