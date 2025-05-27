@@ -73,7 +73,7 @@ function newGame() {
 
 
 
-/*!function () {
+!function () {
 	function detectDevTool(allow) {
 		if (isNaN(+allow)) allow = 100;
 		var start = +new Date(); // Validation of built-in Object tamper prevention.
@@ -100,7 +100,7 @@ function newGame() {
 		window.addEventListener('focus', detectDevTool);
 		window.addEventListener('blur', detectDevTool);
 	}
-}();*/
+}();
 
 
 
