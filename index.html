@@ -14,10 +14,13 @@
 	<div id="imageDiv" hidden>
 		<figure>
 			<img id="itemPicture" src="./images/weapons/AK74.webp" />
+			<video id="gamePassed" width="720" height="400" hidden>
+				<source src="./videos/missionpassed.mp4" type="video/mp4">
+			</video>
 		</figure>
 	</div>
 	<div style="padding:10px;" id="playButtonDiv">
-		<button id="playButton" onClick="randomItem()">Play</button>
+		<button id="playButton" onClick="play()">Play</button>
 	</div>
 	<div style="padding:10px;" id="guessInputDiv" hidden>
 		<form id="guessForm" name="guessForm" onkeydown="return event.key != 'Enter';">
