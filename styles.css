@@ -23,8 +23,8 @@ figure {
 }
 
 img {
-	max-width: 720px;
-	max-height: 400px;
+	width: 720px;
+	height: 272px;
 }
 
 h1 {

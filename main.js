@@ -10,16 +10,16 @@ userGuessInputField.addEventListener("keydown", function (e) {
 
 function checkAnswer() {
 	var userGuess = document.forms["guessForm"]["userGuess"].value;
-	console.log(`${userGuess}`);
+
+	if (userGuess == '') {
+		play();
+	}
+
 	if (items[currentItem].acceptedAnswers.includes(userGuess.toLowerCase())) {
-		console.log("checkAnswer: true");
 		askedItems.push(items[currentItem].itemName);
-		console.log("current item name: " + items[currentItem].itemName);
-		console.log("askedItems: " + `${askedItems}`);
 		play();
 		return true;
 	} else {
-		console.log("checkAnswer: false");
 		document.getElementById("userGuess").value = '';
 		return false;
 	}
