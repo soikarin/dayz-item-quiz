@@ -3,10 +3,13 @@
 	src: url(./28DaysLater.ttf);
 }
 
-body {
+html {
 	background-image: url(./images/background.jpg);
+	background-size: cover;
 	background-color: rgb(0, 0, 53);
 	font-family: '28days';
+	background-repeat: no-repeat;
+	height: 100%;
 }
 
 figure {
