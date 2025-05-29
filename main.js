@@ -17,6 +17,7 @@ function checkAnswer() {
 
 	if (items[currentItem].acceptedAnswers.includes(userGuess.toLowerCase())) {
 		askedItems.push(items[currentItem].itemName);
+		document.getElementById("userGuess").value = '';
 		play();
 		return true;
 	} else {
@@ -25,17 +26,30 @@ function checkAnswer() {
 	}
 }
 
-function randomItem() {
-	//produces a random number between 0 and items.length
+function generateRandom() {
 	var a = Math.floor(Math.random() * items.length);
-	//changes the currentItem variable to a randomized number
-	currentItem = a;
-	console.log("currentItem: " + `${currentItem}`);
+	return a;
+}
+
+function randomItem() {
+	var randomNumber = generateRandom();
+
+	if (randomNumber == currentItem) {
+		console.log("randomNumber == currentItem: ", randomNumber == currentItem);
+		console.log("randomNumber: ", randomNumber);
+		console.log("currentItem: ", currentItem);
+		randomNumber = generateRandom();
+	} else if (randomNumber != currentItem) {
+		console.log("randomNumber: ", randomNumber);
+		console.log("currentItem: ", currentItem);
+		currentItem = randomNumber;
+	}
 
 
 }
 
 function showGameElements() {
+	document.getElementById("playButtonDiv").hidden = true;
 	if (document.getElementById("imageDiv").hidden = true) {
 		document.getElementById("imageDiv").hidden = false;
 	}
@@ -46,10 +60,7 @@ function showGameElements() {
 }
 
 function play() {
-	document.getElementById("playButtonDiv").hidden = true;
 	showGameElements();
-	//empties the input field
-	document.getElementById("userGuess").value = '';
 	randomItem();
 
 	if (askedItems.includes(items[currentItem].itemName) == false) {
