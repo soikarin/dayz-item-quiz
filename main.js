@@ -46,6 +46,7 @@ function randomItem() {
 
 function setItem() {
 	if (askedItems.includes(items[currentItem].itemName) == false) {
+		document.getElementById("skips").innerHTML = "SKIPS LEFT "+ skips;
 		document.getElementById("itemPicture").src = items[currentItem].image;
 	} else if (askedItems.length == items.length) {
 		document.getElementById("guessInputDiv").hidden = true;
@@ -86,7 +87,7 @@ function skipItem() {
 function newGame() {
 	location.reload();
 }
-/*
+
 !function () {
 	function detectDevTool(allow) {
 		if (isNaN(+allow)) allow = 100;
@@ -115,7 +116,7 @@ function newGame() {
 		window.addEventListener('blur', detectDevTool);
 	}
 }();
-*/
+
 
 
 

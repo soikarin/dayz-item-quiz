@@ -23,6 +23,7 @@
 		<button class="btn" id="playButton" onClick="play()">PLAY</button>
 	</div>
 	<div style="padding:10px;" id="guessInputDiv" hidden>
+		<label for="userGuess" id="skips"></label>
 		<form id="guessForm" name="guessForm" onkeydown="return event.key != 'Enter';">
 			<input autocomplete="off" style="padding:10px;" id="userGuess" name="userGuess" type="text"
 				placeholder="Leave empty to SKIP" />

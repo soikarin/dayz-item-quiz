@@ -65,6 +65,14 @@ h1 {
 	text-align: center;
 }
 
+#skips {
+	text-align: center;
+	font-size: 40px;
+	display: flex;
+	flex-flow: column;
+	margin: auto;
+}
+
 #guessForm {
 	display: flex;
 	flex-flow: column;
