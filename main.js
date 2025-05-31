@@ -12,8 +12,8 @@ userGuessInputField.addEventListener("keydown", function (e) {
 function checkAnswer() {
 	var userGuess = document.forms["guessForm"]["userGuess"].value;
 
-	if (userGuess == '') {
-		console.log("skips: ", skips);
+	if (userGuess == '' && skips > 0) {
+		skipItem();
 		randomItem();
 	}
 
@@ -74,10 +74,19 @@ function play() {
 	randomItem();
 }
 
+function skipItem() {
+	if (skips > 0) {
+		skips--;
+		console.log(skips);
+	} else if (skips <= 0) {
+		
+	}
+}
+
 function newGame() {
 	location.reload();
 }
-
+/*
 !function () {
 	function detectDevTool(allow) {
 		if (isNaN(+allow)) allow = 100;
@@ -106,6 +115,7 @@ function newGame() {
 		window.addEventListener('blur', detectDevTool);
 	}
 }();
+*/
 
 
 

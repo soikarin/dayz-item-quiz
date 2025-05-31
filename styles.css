@@ -1,6 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 @font-face {
 	font-family: '28days';
 	src: url(./28DaysLater.ttf);
+}
+
+.btn {
+	cursor: pointer;
+	border: 0px solid rgb(187, 204, 0);
+	font-family: Lato;
+	font-size: 36px;
+	color: rgb(255, 255, 255);
+	padding: 7px 30px;
+	transition: all 0ms ease 0s;
+	width: 300px;
+	box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+	border-radius: 1px;
+	background: rgba(0, 0, 0, 0.59);
+	--hover-width: 300px;
+	--hover-borderSize: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	--hover-color: #ff0000;
+	--hover-bgc: #000000;
+	margin: auto;
+}
+
+.btn:hover {
+	color: rgb(255, 0, 0);
+	width: 300px;
+	background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+	border-color: rgb(204, 0, 105);
+	border-width: 0px;
+	border-style: solid;
 }
 
 html {
@@ -28,21 +61,8 @@ img {
 }
 
 h1 {
-	font-size: xxx-large;
+	font-size: 70px;
 	text-align: center;
-}
-
-#playButton {
-	background-color: #555555;
-	border-color: #c0c0c0;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	font-family: '28days';
-	font-size: x-large;
-	display: flex;
-	flex-flow: column;
-	margin: auto;
 }
 
 #guessForm {
