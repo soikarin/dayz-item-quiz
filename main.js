@@ -1,5 +1,6 @@
 var currentItem;
 var askedItems = [];
+var skips = 3;
 
 var userGuessInputField = document.getElementById("userGuess");
 userGuessInputField.addEventListener("keydown", function (e) {
@@ -12,13 +13,14 @@ function checkAnswer() {
 	var userGuess = document.forms["guessForm"]["userGuess"].value;
 
 	if (userGuess == '') {
-		play();
+		console.log("skips: ", skips);
+		randomItem();
 	}
 
 	if (items[currentItem].acceptedAnswers.includes(userGuess.toLowerCase())) {
 		askedItems.push(items[currentItem].itemName);
 		document.getElementById("userGuess").value = '';
-		play();
+		randomItem();
 		return true;
 	} else {
 		document.getElementById("userGuess").value = '';
@@ -32,37 +34,17 @@ function generateRandom() {
 }
 
 function randomItem() {
-	var randomNumber = generateRandom();
-
-	if (randomNumber == currentItem) {
-		console.log("randomNumber == currentItem: ", randomNumber == currentItem);
-		console.log("randomNumber: ", randomNumber);
-		console.log("currentItem: ", currentItem);
+	var randomNumber;
+	do {
 		randomNumber = generateRandom();
-	} else if (randomNumber != currentItem) {
-		console.log("randomNumber: ", randomNumber);
-		console.log("currentItem: ", currentItem);
-		currentItem = randomNumber;
-	}
-
+	} while (randomNumber == currentItem);
+	console.log("currentItem: ", currentItem);
+	currentItem = randomNumber;
+	setItem();
 
 }
 
-function showGameElements() {
-	document.getElementById("playButtonDiv").hidden = true;
-	if (document.getElementById("imageDiv").hidden = true) {
-		document.getElementById("imageDiv").hidden = false;
-	}
-
-	if (document.getElementById("guessInputDiv").hidden = true) {
-		document.getElementById("guessInputDiv").hidden = false;
-	}
-}
-
-function play() {
-	showGameElements();
-	randomItem();
-
+function setItem() {
 	if (askedItems.includes(items[currentItem].itemName) == false) {
 		document.getElementById("itemPicture").src = items[currentItem].image;
 	} else if (askedItems.length == items.length) {
@@ -72,17 +54,29 @@ function play() {
 		document.getElementById("gamePassed").autoplay = true;
 		document.getElementById("newGameDiv").hidden = false;
 	} else {
-		play();
+		randomItem();
 	}
+}
 
-	console.log(items[currentItem].acceptedAnswers);
+function showGameElements() {
+	if (!document.getElementById("playButtonDiv").hidden) {
+		document.getElementById("playButtonDiv").hidden = true;
+	}
+	if (document.getElementById("imageDiv").hidden || document.getElementById("guessInputDiv").hidden) {
+		document.getElementById("imageDiv").hidden = false;
+		document.getElementById("guessInputDiv").hidden = false;
+	}
+}
+
+function play() {
+	currentItem = generateRandom();
+	showGameElements();
+	randomItem();
 }
 
 function newGame() {
 	location.reload();
 }
-
-
 
 !function () {
 	function detectDevTool(allow) {
@@ -112,7 +106,6 @@ function newGame() {
 		window.addEventListener('blur', detectDevTool);
 	}
 }();
-
 
 
 

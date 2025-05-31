@@ -14,13 +14,13 @@ const items = [
 	{
 		category: "weapons",
 		image: "./images/weapons/AKM.webp",
-		acceptedAnswers: ["ak-47", "ka-m", "ak-m", "akm", "kam", "ak 47", "ka 47", "kalashnikov", "kalash"],
+		acceptedAnswers: ["ak47", "ak-47", "ka-m", "ak-m", "akm", "kam", "ak 47", "ka 47", "kalashnikov", "kalash"],
 		itemName: "KA-M"
 	},
 	{
 		category: "weapons",
 		image: "./images/weapons/AKS74U.webp",
-		acceptedAnswers: ["paska ak", "paskaak", "kassi", "aks74u", "kas-74u", "aks-74u", "mini ak"],
+		acceptedAnswers: ["aks74u", "kas-74u", "aks-74u"],
 		itemName: "KAS-74U"
 	},
 	{
@@ -38,7 +38,7 @@ const items = [
 	{
 		category: "weapons",
 		image: "./images/weapons/AugShort.webp",
-		acceptedAnswers: ["aur a1", "aug a1", "lyhyt aug", "steyr aug a1", "paska aug"],
+		acceptedAnswers: ["aur a1", "aug a1", "steyr aug a1"],
 		itemName: "AUR A1"
 	}
 ];
