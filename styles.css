@@ -63,6 +63,11 @@ img {
 h1 {
 	font-size: 70px;
 	text-align: center;
+	text-shadow:
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		-1px -1px 0 #000,
+		1px -1px 0 #000;
 }
 
 #skips {
@@ -71,6 +76,11 @@ h1 {
 	display: flex;
 	flex-flow: column;
 	margin: auto;
+	text-shadow:
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		-1px -1px 0 #000,
+		1px -1px 0 #000;
 }
 
 #guessForm {
@@ -87,6 +97,11 @@ h1 {
 	width: 70%;
 	margin: auto;
 	margin-top: 5px;
+	text-shadow:
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		-1px -1px 0 #000,
+		1px -1px 0 #000;
 }
 
 #newGameButton {
@@ -98,4 +113,33 @@ h1 {
 	margin: auto;
 	padding: 3px;
 	width: 200px;
+	
+}
+
+#playerScore {
+	outline: rgb(0, 0, 0);
+	text-align: center;
+	font-size: 40px;
+	display: flex;
+	flex-flow: column;
+	margin: auto;
+	text-shadow:
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		-1px -1px 0 #000,
+		1px -1px 0 #000;
+}
+
+#playerScoreNumber {
+	outline: rgb(0, 0, 0);
+	text-align:center;
+	font-size: 40px;
+	display: flex;
+	flex-flow: column;
+	margin: auto;
+	text-shadow:
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		-1px -1px 0 #000,
+		1px -1px 0 #000;
 }

@@ -1,6 +1,7 @@
 var currentItem;
 var askedItems = [];
 var skips = 3;
+var points = 0;
 
 var userGuessInputField = document.getElementById("userGuess");
 userGuessInputField.addEventListener("keydown", function (e) {
@@ -21,6 +22,8 @@ function checkAnswer() {
 		askedItems.push(items[currentItem].itemName);
 		document.getElementById("userGuess").value = '';
 		randomItem();
+		points++;
+		document.getElementById("playerScoreNumber").innerHTML = points;
 		return true;
 	} else {
 		document.getElementById("userGuess").value = '';
@@ -67,12 +70,16 @@ function showGameElements() {
 		document.getElementById("imageDiv").hidden = false;
 		document.getElementById("guessInputDiv").hidden = false;
 	}
+	if (document.getElementById("scoreDiv").hidden) {
+		document.getElementById("scoreDiv").hidden = false;
+	}
 }
 
 function play() {
 	currentItem = generateRandom();
 	showGameElements();
 	randomItem();
+	document.getElementById("playerScoreNumber").innerHTML = points;
 }
 
 function skipItem() {
